@@ -77,8 +77,10 @@ body * {
 }
 
 .light .switch button {
+    
     right: 0;
     left: initial;
+    margin-right: -2px;
 }
 
 .switch span {
