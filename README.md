@@ -18,7 +18,7 @@ Esse projeto foi desenvolvido como parte de um curso da Rocketseat, mas todo o c
 <br>
 
 <p align="center">
-  <img alt="projeto LinkHub" src=".github/preview.jpg" width="100%">
+  <img alt="projeto LinkHub" src="/assets/linkhub.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
