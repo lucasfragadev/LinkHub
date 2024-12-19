@@ -29,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O LinkHub é um agregador de links para usar como cartão de visitas online.
 
-- [Acesse o projeto finalizado, online](https://lucasfragadev.com/links/)
+- [Acesse o projeto finalizado, online](https://avelino.vercel.app/)
 
 ## :memo: Licença
 
