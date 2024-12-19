@@ -1,96 +1,113 @@
+/* 
+    Olá, seja bem vindo (a)! Meu nome é Lucas Avelino Fraga. 
+    Sou desenvolvedor backend e professor de programação.
+
+    Vamos às explicações do código.
+
+    Este CSS define os estilos para a página com alternância entre os modos claro e escuro,
+    incluindo animações, efeitos de hover e responsividade. Ele usa variáveis CSS para
+    controlar as cores, imagens de fundo e outros parâmetros visuais. 
+    
+    Admito, nem tudo está perfeito, mas funciona. rsrsrs
+*/
+
+/* Reset para garantir uma base consistente entre navegadores */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ajusta o modelo de box para incluir bordas e padding dentro do tamanho */
 }
 
+/* Variáveis globais para personalização das cores e imagens */
 :root {
-    --text-color: white;
-    --bg-url: url(/assets/bg-mobile.png);
-    --stroke-color: rgba(255, 255, 255, 0.5);
-    --surface-color:  rgba(255, 255, 255, 0.05);
-    --surface-color-hover: rgba(0, 0, 0, 0.02);
-    --highlight-color: rgba(255, 255, 255, 0.2);
-    --switch-bg-url: url(/assets/moon-stars.svg)
+    --text-color: white; /* Cor do texto para o modo escuro */
+    --bg-url: url(/assets/bg-mobile.png); /* Imagem de fundo para o modo escuro em dispositivos móveis */
+    --stroke-color: rgba(255, 255, 255, 0.5); /* Cor para bordas */
+    --surface-color: rgba(255, 255, 255, 0.05); /* Cor de fundo para elementos com transparência */
+    --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor ao passar o mouse sobre elementos */
+    --highlight-color: rgba(255, 255, 255, 0.2); /* Cor de destaque */
+    --switch-bg-url: url(/assets/moon-stars.svg); /* Imagem de fundo para o botão de alternância */
 }
 
+/* Estilos para o modo claro (aplicado com a classe "light") */
 .light {
-    --text-color: black;
-    --bg-url: url(/assets/bg-mobile-light.png);
-    --stroke-color: rgba(0, 0, 0, 0.5);
-    --surface-color:  rgba(0, 0, 0, 0.05);
-    --surface-color-hover: rgba(0, 0, 0, 0.02);
-    --highlight-color: rgba(0, 0, 0, 0.1);
-    --switch-bg-url: url(/assets/sun.svg)
+    --text-color: black; /* Cor do texto para o modo claro */
+    --bg-url: url(/assets/bg-mobile-light.png); /* Imagem de fundo para o modo claro em dispositivos móveis */
+    --stroke-color: rgba(0, 0, 0, 0.5); /* Cor de borda para o modo claro */
+    --surface-color: rgba(0, 0, 0, 0.05); /* Cor de fundo no modo claro */
+    --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor ao passar o mouse sobre elementos no modo claro */
+    --highlight-color: rgba(0, 0, 0, 0.1); /* Cor de destaque no modo claro */
+    --switch-bg-url: url(/assets/sun.svg); /* Imagem de fundo para o botão de alternância no modo claro */
 }
 
+/* Estilos principais do body */
 body {
-    background: var(--bg-url) no-repeat top center/cover;
-    height: 100vh;
+    background: var(--bg-url) no-repeat top center/cover; /* Define o fundo da página com a variável para a imagem */
+    height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
 }
 
+/* Estilos gerais para todos os elementos dentro do body */
 body * {
-    font-family: "Inter", sans-serif;
-    color: var(--text-color);
+    font-family: "Inter", sans-serif; /* Define a fonte do site */
+    color: var(--text-color); /* Aplica a cor de texto definida nas variáveis */
 }
 
+/* Container principal para centralizar o conteúdo */
 .container-principal {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
     width: 100%;
-    max-width: 31.25rem;
-    margin: auto;
+    max-width: 31.25rem; /* Define uma largura máxima */
+    margin: auto; /* Centraliza o container */
     padding: 10px;
 }
 
-/* profile */
-
-.profile{
-    text-align: center;
-    padding: 24px;
+/* Estilos para o perfil */
+.profile {
+    text-align: center; /* Centraliza o conteúdo dentro da div */
+    padding: 24px; /* Espaçamento interno */
 }
 
 .profile img {
-    width: 112px;
+    width: 112px; /* Define a largura da imagem de perfil */
 }
 
 .profile p {
-    font-weight: 500;
-    line-height: 24px;
-    margin-top: 8px;
+    font-weight: 500; /* Define a espessura da fonte */
+    line-height: 24px; /* Altura da linha para o texto */
+    margin-top: 8px; /* Espaço acima do texto */
 }
 
-/* switch */
-
+/* Estilos para o botão de alternância de modo */
 .switch {
     position: relative;
     width: 64px;
-    margin: 4px auto;
+    margin: 4px auto; /* Centraliza o switch horizontalmente */
 }
 
 .switch button {
     width: 32px;
     height: 32px;
-    background: white var(--switch-bg-url) no-repeat center;
+    background: white var(--switch-bg-url) no-repeat center; /* Define o fundo do botão com a imagem */
     border: 0;
-    border-radius: 50%;
-
+    border-radius: 50%; /* Torna o botão redondo */
     position: absolute;
     top: 50%;
     left: 0;
     z-index: 1;
-    transform: translateY(-50%);
-
-    animation: slide-back 0.2s;
+    transform: translateY(-50%); /* Alinha verticalmente o botão */
+    animation: slide-back 0.2s; /* Animação do botão ao mudar de posição */
 }
 
+/* Animação do botão de alternância no modo claro */
 .light .switch button {
-    animation: slide-in 0.4s forwards;
+    animation: slide-in 0.4s forwards; /* Animação para o modo claro */
 }
 
+/* Estilo para o botão de alternância quando o mouse passa sobre ele */
 .switch button:hover {
-    outline: 8px solid var(--highlight-color);
+    outline: 8px solid var(--highlight-color); /* Adiciona um contorno ao passar o mouse */
 }
 
 .switch span {
@@ -99,20 +116,18 @@ body * {
     height: 24px;
     background: var(--surface-color);
     border: 1px solid var(--stroke-color);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 9999px;
+    backdrop-filter: blur(4px); /* Adiciona desfoque ao fundo */
+    -webkit-backdrop-filter: blur(4px); /* Suporte para navegadores webkit */
+    border-radius: 9999px; /* Torna a borda arredondada */
 }
 
-/* links */
-
+/* Estilos para a lista de links */
 ul {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 16px; /* Espaçamento entre os itens da lista */
     list-style: none;
     padding: 24px 0;
-    /* border: 1px solid red; */
 }
 
 ul li a {
@@ -125,22 +140,21 @@ ul li a {
     border-radius: 8px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    text-decoration: none;
+    text-decoration: none; /* Remove o sublinhado dos links */
     font-weight: 32.25rem;
     transition: background 0.2s;
-    /* border: 1px solid red; */
 }
 
+/* Efeito de hover nos links */
 ul li a:hover {
-    background: var(--surface-color-hover);
-    border: 1.5px solid var(--text-color);
+    background: var(--surface-color-hover); /* Muda a cor de fundo no hover */
+    border: 1.5px solid var(--text-color); /* Aumenta a borda no hover */
 }
 
-/* social links */
-
+/* Estilos para os ícones de redes sociais */
 .social-links {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centraliza os ícones */
     padding: 24px 0;
     font-size: 24px;
 }
@@ -151,13 +165,14 @@ ul li a:hover {
     justify-content: center;
     padding: 16px;
     transition: background 0.2s;
-    border-radius: 50%;
+    border-radius: 50%; /* Torna os ícones circulares */
 }
 
 .social-links a:hover {
-    background: var(--highlight-color);
+    background: var(--highlight-color); /* Muda a cor de fundo ao passar o mouse */
 }
 
+/* Estilos do rodapé */
 footer {
     position: relative;
     display: flex;
@@ -173,24 +188,23 @@ footer p {
     transition: 0.5s;
 }
 
+/* Efeito de hover no rodapé */
 footer p:hover {
-    transform: scale(0.9)
+    transform: scale(0.9); /* Diminui o tamanho ao passar o mouse */
 }
 
-/* media queries */
-
+/* Media queries para dispositivos com largura mínima de 768px (telas maiores) */
 @media (min-width: 768px) {
     :root {
-        --bg-url: url(/assets/bg-desktop.png);
+        --bg-url: url(/assets/bg-desktop.png); /* Imagem de fundo para telas maiores */
     }
 
     .light {
-        --bg-url: url(/assets/bg-desktop-light.png);
+        --bg-url: url(/assets/bg-desktop-light.png); /* Imagem de fundo para o modo claro em telas maiores */
     }
 }
 
-/* animation */
-
+/* Animações para o botão de alternância */
 @keyframes slide-in {
     from {
         left: 0;

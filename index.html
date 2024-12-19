@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="">
 <head>
+    <!-- 
+        Olá, seja bem vindo (a)! Meu nome é Lucas Avelino Fraga. 
+        Sou desenvolvedor backend e professor de programação.
+        
+        Vamos às explicações do código.
+
+        Este documento HTML define uma página pessoal com links de redes sociais,
+        botão para alternar entre modos claro e escuro e estilos personalizáveis.
+        A página utiliza fontes, ícones e estilos externos.
+    -->
+
+    <!-- Pré-conexão para otimização do carregamento das fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonte personalizada "Inter" com peso 500 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Metadados básicos -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ícones para dispositivos móveis e navegadores -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets//favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+
+    <!-- Título da página -->
     <title>Lucas Fraga</title>
+
+    <!-- Estilos externos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Conteúdo principal da página -->
     <div class="container-principal">
+        <!-- Seção de perfil com imagem e nome -->
         <div class="profile">
             <img src="/assets/avatar-dark.png" alt="imagem de perfil de lucas com fundo colorido e faixas pretas">
             <p>Lucas Fraga</p>
         </div>
+
+        <!-- Botão para alternar entre modos claro e escuro -->
         <div class="switch" onclick="toggleMode()">
             <button></button>
             <span></span>
         </div>
+
+        <!-- Lista de links úteis -->
         <ul>
             <li><a target="_blank" rel="noopener" href="https://linkedin.com/in/devlucasfraga">Linkedin</a></li>
             <li><a target="_blank" rel="noopener" href="https://github.com/lucasfragadev">GitHub</a></li>
@@ -32,10 +59,12 @@
             <li><a target="_blank" rel="noopener" href="https://docs.google.com/document/d/13E0pVkyMl8x0u2wBkDnk2y7jonfD4E5O5LIpJ4wqX2s/edit?usp=sharing">Currículo</a></li>
             <li><a target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=%2B5571997183480&text=Hello,%20Lucas!&type=phone_number&app_absent=0">Whatsapp</a></li>
         </ul>
+
+        <!-- Ícones de redes sociais -->
         <div class="social-links">
-            </a>
             <a target="_blank" rel="noopener" href="https://linkedin.com/in/devlucasfraga">
                 <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
             <a target="_blank" rel="noopener" href="https://github.com/lucasfragadev/">
                 <ion-icon name="logo-github"></ion-icon>
             </a>
@@ -50,11 +79,13 @@
             </a>
         </div>
     </div>
+
+    <!-- Rodapé com uma frase -->
     <footer>
         <p>A vida é curta, então curta!</p>
     </footer>
 
-
+    <!-- Scripts externos -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
