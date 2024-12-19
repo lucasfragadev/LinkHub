@@ -1,8 +1,7 @@
 <h1 align="center"> LinkHub </h1>
 
 <p align="center">
-O LinkHub é um agregador de links que funciona como um cartão de visitas online, permitindo centralizar e compartilhar facilmente suas principais redes sociais e contatos. Desenvolvido com HTML5, CSS3 e JavaScript. Você pode visualizar o projeto finalizado online [aqui](https://lucasfragadev.com/links/) Este projeto está sob a licença MIT. <br/>
-</p>
+O LinkHub é um agregador de links que funciona como um cartão de visitas online, permitindo centralizar e compartilhar facilmente suas principais redes sociais e contatos. Desenvolvido com HTML5, CSS3 e JavaScript. Você pode visualizar o projeto finalizado online</p>[aqui](https://lucasfragadev.com/links/)
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -34,10 +33,6 @@ O LinkHub é um agregador de links para usar como cartão de visitas online.
 - [Acesse o projeto finalizado, online](https://lucasfragadev.com/links/)
 
 ## :memo: Licença
-
-<p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
-</p>
 
 Esse projeto está sob a licença MIT.
 
