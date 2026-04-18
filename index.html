@@ -3,13 +3,13 @@
 <head>
     <!-- 
         Olá, seja bem vindo (a)! Meu nome é Lucas Avelino Fraga. 
-        Sou desenvolvedor backend e professor de programação.
+        Sou desenvolvedor backend e especialista em automação de vendas.
         
         Vamos às explicações do código.
 
-        Este documento HTML define uma página pessoal com links de redes sociais,
+        Este documento HTML define uma página pessoal com foco em soluções de vendas,
         botão para alternar entre modos claro e escuro e estilos personalizáveis.
-        A página utiliza fontes, ícones e estilos externos.
+        A página utiliza fontes, ícones e estilos externos com elementos mobile-first.
     -->
 
     <!-- Pré-conexão para otimização do carregamento das fontes -->
@@ -17,12 +17,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Fonte personalizada "Inter" com peso 500 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Metadados básicos -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Meta tags para PWA -->
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Ícones para dispositivos móveis e navegadores -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
@@ -30,19 +35,42 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 
     <!-- Título da página -->
-    <title>Lucas Avelino Fraga</title>
+    <title>Lucas Avelino Fraga - Automação de Vendas</title>
 
     <!-- Estilos externos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header mobile com status bar simulada -->
+    <div class="mobile-header">
+        <div class="mobile-status-bar">
+            <div class="mobile-time" id="mobile-time">09:41</div>
+            <div class="mobile-battery">
+                <span>85%</span>
+                <div class="battery-icon">
+                    <div class="battery-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Conteúdo principal da página -->
     <div class="container-principal">
         <!-- Seção de perfil com imagem, nome e pequena descrição -->
         <div class="profile">
             <img src="/assets/avatar-dark.png" alt="imagem de perfil de lucas com fundo colorido e faixas pretas">
+            <div class="online-badge"></div>
             <p>Lucas Avelino Fraga</p>
-            <p style="font-size: 12px; padding: 0px; margin: 0px;">< backend developer and programming tutor ></p>
+            <p class="subtitle">< desenvolvedor • automação de vendas • resultados ></p>
+        </div>
+
+        <!-- Indicador de swipe para mobile -->
+        <div class="swipe-indicator">
+            <div class="swipe-dots">
+                <div class="swipe-dot active"></div>
+                <div class="swipe-dot"></div>
+                <div class="swipe-dot"></div>
+            </div>
         </div>
 
         <!-- Botão para alternar entre modos claro e escuro -->
@@ -51,35 +79,57 @@
             <span></span>
         </div>
 
-        <!-- Lista de links úteis -->
+        <!-- Lista de links focados em vendas -->
         <ul>
-            <li><a target="_blank" rel="noopener" href="https://linkedin.com/in/devlucasfraga">Linkedin</a></li>
-            <li><a target="_blank" rel="noopener" href="https://github.com/lucasfragadev">GitHub</a></li>
-            <li><a target="_blank" rel="noopener" href="https://docs.google.com/document/d/13E0pVkyMl8x0u2wBkDnk2y7jonfD4E5O5LIpJ4wqX2s/edit?usp=sharing">Currículo</a></li>
-            <li><a target="_blank" rel="noopener" href="https://instagram.com/lucasdevx/">Instagram</a></li>
-            <li><a target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=%2B5571997183480&text=Hello,%20Lucas!&type=phone_number&app_absent=0">Aulas Particulares</a></li>
+            <li>
+                <a target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=%2B5571997183480&text=Olá%20Lucas!%20Quero%20automatizar%20minhas%20vendas%20e%20aumentar%20meus%20resultados.%20Pode%20me%20ajudar?&type=phone_number&app_absent=0">
+                    <ion-icon name="trending-up-outline"></ion-icon>
+                    Automatize suas Vendas
+                </a>
+            </li>
+            <li>
+                <a target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=%2B5571997183480&text=Oi%20Lucas!%20Preciso%20criar%20um%20cardápio%20digital%20profissional%20para%20meu%20negócio.%20Vamos%20conversar?&type=phone_number&app_absent=0">
+                    <ion-icon name="restaurant-outline"></ion-icon>
+                    Crie seu Cardápio Digital
+                </a>
+            </li>
+            <li>
+                <a target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=%2B5571997183480&text=Olá%20Lucas!%20Gostaria%20de%20fazer%20um%20orçamento%20para%20um%20projeto%20personalizado.%20Podemos%20conversar?&type=phone_number&app_absent=0">
+                    <ion-icon name="calculator-outline"></ion-icon>
+                    Faça um Orçamento
+                </a>
+            </li>
         </ul>
 
         <!-- Ícones de redes sociais -->
         <div class="social-links">
-            <a target="_blank" rel="noopener" href="https://linkedin.com/in/devlucasfraga">
+            <a target="_blank" rel="noopener" href="https://linkedin.com/in/devlucasfraga" title="LinkedIn">
                 <ion-icon name="logo-linkedin"></ion-icon>
             </a>
-            <a target="_blank" rel="noopener" href="https://github.com/lucasfragadev/">
+            <a target="_blank" rel="noopener" href="https://github.com/lucasfragadev/" title="GitHub">
                 <ion-icon name="logo-github"></ion-icon>
             </a>
-            <a target="_blank" rel="noopener" href="https://instagram.com/lucasdevx/">
+            <a target="_blank" rel="noopener" href="https://instagram.com/lucasdevx/" title="Instagram">
                 <ion-icon name="logo-instagram"></ion-icon>
             </a>
-            <a target="_blank" rel="noopener" href="mailto:lucasfraga.dev@gmail.com">
+            <a target="_blank" rel="noopener" href="mailto:lucasfraga.dev@gmail.com" title="Email">
                 <ion-icon name="mail-outline"></ion-icon>
             </a>
         </div>
     </div>
 
+    <!-- Floating Action Button para WhatsApp (apenas mobile) -->
+    <a href="https://api.whatsapp.com/send/?phone=%2B5571997183480&text=Olá%20Lucas!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20seus%20serviços!&type=phone_number&app_absent=0" 
+       class="fab-whatsapp" 
+       target="_blank" 
+       rel="noopener"
+       title="Falar no WhatsApp">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+    </a>
+
     <!-- Rodapé com uma frase -->
     <footer>
-        <p>A vida é curta, então curta!</p>
+        <p>Transformando ideias em resultados digitais</p>
     </footer>
 
     <!-- Scripts externos -->
@@ -88,5 +138,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-

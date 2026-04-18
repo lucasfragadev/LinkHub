@@ -1,224 +1,676 @@
 /* 
     Olá, seja bem vindo (a)! Meu nome é Lucas Avelino Fraga. 
-    Sou desenvolvedor backend e professor de programação.
+    Sou desenvolvedor backend e especialista em automação de vendas.
 
     Vamos às explicações do código.
 
-    Este CSS define os estilos para a página com alternância entre os modos claro e escuro,
-    incluindo animações, efeitos de hover e responsividade. Ele usa variáveis CSS para
-    controlar as cores, imagens de fundo e outros parâmetros visuais. 
+    Este CSS define os estilos para a página com foco em tema dark moderno,
+    incluindo animações, efeitos de hover, backgrounds SVG e responsividade. 
+    Ele usa variáveis CSS para controlar as cores e outros parâmetros visuais.
     
-    Admito, nem tudo está perfeito, mas funciona. rsrsrs
+    Design focado em conversão e resultados de vendas com elementos mobile-first.
 */
 
 /* Reset para garantir uma base consistente entre navegadores */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ajusta o modelo de box para incluir bordas e padding dentro do tamanho */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Variáveis globais para personalização das cores e imagens */
+/* Variáveis globais para o tema dark (padrão) */
 :root {
-    --text-color: white; /* Cor do texto para o modo escuro */
-    --bg-url: url(/assets/bg-mobile.png); /* Imagem de fundo para o modo escuro em dispositivos móveis */
-    --stroke-color: rgba(255, 255, 255, 0.5); /* Cor para bordas */
-    --surface-color: rgba(255, 255, 255, 0.05); /* Cor de fundo para elementos com transparência */
-    --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor ao passar o mouse sobre elementos */
-    --highlight-color: rgba(255, 255, 255, 0.2); /* Cor de destaque */
-    --switch-bg-url: url(/assets/moon-stars.svg); /* Imagem de fundo para o botão de alternância */
+  --text-color: #e1e1e6;
+  --text-secondary: #a1a1aa;
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #18181b;
+  --bg-tertiary: #27272a;
+  --accent-color: #10b981;
+  --accent-hover: #059669;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-hover: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --switch-bg-url: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fbbf24' viewBox='0 0 24 24'%3e%3cpath d='M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z'/%3e%3c/svg%3e");
 }
 
-/* Estilos para o modo claro (aplicado com a classe "light") */
+/* Estilos para o modo claro */
 .light {
-    --text-color: black; /* Cor do texto para o modo claro */
-    --bg-url: url(/assets/bg-mobile-light.png); /* Imagem de fundo para o modo claro em dispositivos móveis */
-    --stroke-color: rgba(0, 0, 0, 0.5); /* Cor de borda para o modo claro */
-    --surface-color: rgba(0, 0, 0, 0.05); /* Cor de fundo no modo claro */
-    --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor ao passar o mouse sobre elementos no modo claro */
-    --highlight-color: rgba(0, 0, 0, 0.1); /* Cor de destaque no modo claro */
-    --switch-bg-url: url(/assets/sun.svg); /* Imagem de fundo para o botão de alternância no modo claro */
+  --text-color: #27272a;
+  --text-secondary: #71717a;
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f4f4f5;
+  --accent-color: #0ea5e9;
+  --accent-hover: #0284c7;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-hover: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  --gradient-accent: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --switch-bg-url: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%236366f1' viewBox='0 0 24 24'%3e%3cpath fill-rule='evenodd' d='M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z' clip-rule='evenodd'/%3e%3c/svg%3e");
 }
 
-/* Estilos principais do body */
+/* Background com gradiente SVG */
 body {
-    background: var(--bg-url) no-repeat top center/cover; /* Define o fundo da página com a variável para a imagem */
-    height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+  background: var(--bg-primary);
+  background-image:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(120, 119, 198, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 119, 198, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(120, 219, 255, 0.2) 0%,
+      transparent 50%
+    );
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Padrão de pontos sutil no background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle,
+    var(--border-color) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 /* Estilos gerais para todos os elementos dentro do body */
 body * {
-    font-family: "Inter", sans-serif; /* Define a fonte do site */
-    color: var(--text-color); /* Aplica a cor de texto definida nas variáveis */
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
 }
 
 /* Container principal para centralizar o conteúdo */
 .container-principal {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    flex-direction: column; /* Organiza os elementos em uma coluna */
-    width: 100%;
-    max-width: 31.25rem; /* Define uma largura máxima */
-    margin: auto; /* Centraliza o container */
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
-/* Estilos para o perfil */
+/* Elementos específicos para mobile */
+.mobile-header {
+  display: block;
+  text-align: center;
+  padding: 20px 0 10px;
+  position: relative;
+}
+
+.mobile-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--surface-color);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+}
+
+.mobile-time {
+  font-weight: 600;
+}
+
+.mobile-battery {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.battery-icon {
+  width: 20px;
+  height: 10px;
+  border: 1px solid var(--text-secondary);
+  border-radius: 2px;
+  position: relative;
+}
+
+.battery-icon::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 2px;
+  width: 2px;
+  height: 6px;
+  background: var(--text-secondary);
+  border-radius: 0 1px 1px 0;
+}
+
+.battery-fill {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 1px;
+  width: 80%;
+  transition: width 0.3s ease;
+}
+
+/* Indicador de swipe para mobile */
+.swipe-indicator {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  opacity: 0.6;
+}
+
+.swipe-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.swipe-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.swipe-dot.active {
+  background: var(--accent-color);
+  transform: scale(1.2);
+}
+
+/* Estilos para o perfil com melhorias mobile */
 .profile {
-    text-align: center; /* Centraliza o conteúdo dentro da div */
-    padding: 24px; /* Espaçamento interno */
+  text-align: center;
+  padding: 32px 24px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.profile::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: -1;
+  animation: pulse 3s ease-in-out infinite;
 }
 
 .profile img {
-    width: 112px; /* Define a largura da imagem de perfil */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: all 0.3s ease;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.profile img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px var(--shadow-color);
 }
 
 .profile p {
-    font-weight: 500; /* Define a espessura da fonte */
-    line-height: 24px; /* Altura da linha para o texto */
-    margin-top: 8px; /* Espaço acima do texto */
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: 16px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.profile .subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  background: none;
+  -webkit-text-fill-color: var(--text-secondary);
+}
+
+/* Badge de status online para mobile */
+.online-badge {
+  position: absolute;
+  bottom: 35px;
+  right: calc(50% - 45px);
+  width: 16px;
+  height: 16px;
+  background: #22c55e;
+  border: 2px solid var(--bg-primary);
+  border-radius: 50%;
+  z-index: 2;
+  animation: blink 2s ease-in-out infinite;
 }
 
 /* Estilos para o botão de alternância de modo */
 .switch {
-    position: relative;
-    width: 64px;
-    margin: 4px auto; /* Centraliza o switch horizontalmente */
+  position: relative;
+  width: 64px;
+  margin: 4px auto 32px;
 }
 
 .switch button {
-    width: 32px;
-    height: 32px;
-    background: white var(--switch-bg-url) no-repeat center; /* Define o fundo do botão com a imagem */
-    border: 0;
-    border-radius: 50%; /* Torna o botão redondo */
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 1;
-    transform: translateY(-50%); /* Alinha verticalmente o botão */
-    animation: slide-back 0.2s; /* Animação do botão ao mudar de posição */
+  width: 32px;
+  height: 32px;
+  background: var(--bg-secondary) var(--switch-bg-url) no-repeat center;
+  background-size: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.2s;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
-/* Animação do botão de alternância no modo claro */
 .light .switch button {
-    animation: slide-in 0.4s forwards; /* Animação para o modo claro */
+  animation: slide-in 0.4s forwards;
 }
 
-/* Estilo para o botão de alternância quando o mouse passa sobre ele */
 .switch button:hover {
-    outline: 8px solid var(--highlight-color); /* Adiciona um contorno ao passar o mouse */
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px var(--shadow-color);
 }
 
 .switch span {
-    display: block;
-    width: 64px;
-    height: 24px;
-    background: var(--surface-color);
-    border: 1px solid var(--stroke-color);
-    backdrop-filter: blur(4px); /* Adiciona desfoque ao fundo */
-    -webkit-backdrop-filter: blur(4px); /* Suporte para navegadores webkit */
-    border-radius: 9999px; /* Torna a borda arredondada */
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-/* Estilos para a lista de links */
+/* Estilos para a lista de links com efeitos corrigidos */
 ul {
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /* Espaçamento entre os itens da lista */
-    list-style: none;
-    padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 32px;
 }
 
 ul li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 24px;
-    background-color: var(--surface-color);
-    border: 1px solid var(--stroke-color);
-    border-radius: 8px;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    text-decoration: none; /* Remove o sublinhado dos links */
-    font-weight: 32.25rem;
-    transition: background 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Efeito de hover nos links */
+/* Efeito de gradiente sutil no hover */
+ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
 ul li a:hover {
-    background: var(--surface-color-hover); /* Muda a cor de fundo no hover */
-    border: 1.5px solid var(--text-color); /* Aumenta a borda no hover */
+  background: var(--surface-hover);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+  color: var(--text-color);
+}
+
+ul li a:hover::before {
+  left: 0;
+  opacity: 0.1;
+}
+
+ul li a ion-icon {
+  font-size: 20px;
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+ul li a:hover ion-icon {
+  transform: scale(1.1);
+  color: var(--accent-hover);
+}
+
+/* Efeito de toque para mobile - CORRIGIDO */
+@media (hover: none) and (pointer: coarse) {
+  ul li a:active {
+    transform: scale(0.96);
+    background: var(--surface-hover);
+    transition: all 0.1s ease;
+  }
+
+  /* Remove o efeito de ripple problemático */
+  ul li a::after {
+    display: none;
+  }
+}
+
+/* Floating Action Button para WhatsApp (mobile) */
+.fab-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.fab-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.fab-whatsapp ion-icon {
+  font-size: 28px;
+  color: white;
 }
 
 /* Estilos para os ícones de redes sociais */
 .social-links {
-    display: flex;
-    justify-content: center; /* Centraliza os ícones */
-    padding: 24px 0;
-    font-size: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 0;
+  font-size: 24px;
 }
 
 .social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    transition: background 0.2s;
-    border-radius: 50%; /* Torna os ícones circulares */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .social-links a:hover {
-    background: var(--highlight-color); /* Muda a cor de fundo ao passar o mouse */
+  background: var(--surface-hover);
+  border-color: var(--accent-color);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.social-links a ion-icon {
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover ion-icon {
+  color: var(--accent-hover);
+  transform: scale(1.1);
 }
 
 /* Estilos do rodapé */
 footer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 24px;
-    font-size: 14px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 32px 24px;
+  margin-top: 20px;
 }
 
 footer p {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    transition: 0.5s;
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 400;
 }
 
-/* Efeito de hover no rodapé */
 footer p:hover {
-    transform: scale(0.9); /* Diminui o tamanho ao passar o mouse */
+  color: var(--accent-color);
+  transform: scale(1.05);
 }
 
-/* Media queries para dispositivos com largura mínima de 768px (telas maiores) */
+/* Scroll suave para mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Media queries para dispositivos móveis específicos */
+@media (max-width: 480px) {
+  .container-principal {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .mobile-header {
+    display: block;
+  }
+
+  .profile {
+    padding: 24px 16px;
+  }
+
+  .profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  ul li a {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+
+  .social-links a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fab-whatsapp {
+    bottom: 16px;
+    right: 16px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Media queries para dispositivos maiores */
 @media (min-width: 768px) {
-    :root {
-        --bg-url: url(/assets/bg-desktop.png); /* Imagem de fundo para telas maiores */
-    }
+  .mobile-header,
+  .mobile-status-bar,
+  .swipe-indicator,
+  .fab-whatsapp {
+    display: none;
+  }
 
-    .light {
-        --bg-url: url(/assets/bg-desktop-light.png); /* Imagem de fundo para o modo claro em telas maiores */
-    }
+  .container-principal {
+    max-width: 480px;
+    padding: 40px;
+  }
+
+  .profile {
+    padding: 40px 32px;
+  }
+
+  .profile img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile p {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  ul li a {
+    padding: 20px 32px;
+    font-size: 18px;
+  }
+
+  .social-links a {
+    width: 52px;
+    height: 52px;
+  }
 }
 
-/* Animações para o botão de alternância */
+@media (min-width: 1024px) {
+  body::before {
+    background-size: 30px 30px;
+  }
+
+  .container-principal {
+    max-width: 520px;
+  }
+}
+
+/* Animações */
 @keyframes slide-in {
-    from {
-        left: 0;
-    }
-    to {
-        left: 55%;
-    }
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 32px);
+  }
 }
 
 @keyframes slide-back {
-    from {
-        left: 55%;
-    }
-    to {
-        left: 0;
-    }
+  from {
+    left: calc(100% - 32px);
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.2;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.container-principal > * {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.container-principal > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.container-principal > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.container-principal > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.container-principal > *:nth-child(4) {
+  animation-delay: 0.4s;
 }
